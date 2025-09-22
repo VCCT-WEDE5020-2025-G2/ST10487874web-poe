@@ -3,37 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Carla-Coiffure - Enquiry</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<nav>
-    <a href="home.html"></a>
-    <a href="about.html"></a>       
-    <a href="service.html"></a>
-    <a href="contact.html"></a> 
-</nav>
-<form>
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+<body class="enquiry">
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Service</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <p>I want to be a:</p>
-    <input type="radio" id="sponsor" name="role" value="Sponsor" required>
-    <label for="sponsor">Sponsor</label><br>
-    
-    <input type="radio" id="volunteer" name="role" value="Volunteer">
-    <label for="volunteer">Volunteer</label><br><br>
+    <!-- Main Content -->
+    <main>
+        <section class="enquiry-box">
+            <h1>Make an Enquiry</h1>
+            <form>
+                <!-- Name Field -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4"></textarea><br><br>
+                <!-- Email Field -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-    <input type="submit" value="Submit">
-</form>
+                <!-- Role Selection -->
+                <p>I want to be a:</p>
+                <input type="radio" id="sponsor" name="role" value="Sponsor" required>
+                <label for="sponsor">Sponsor</label><br>
 
-<body>
-    <body class="enquiry">
-    
+                <input type="radio" id="volunteer" name="role" value="Volunteer">
+                <label for="volunteer">Volunteer</label><br>
+
+                <!-- Message Field -->
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <!-- Submit Button -->
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Carla-Coiffure. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

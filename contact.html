@@ -4,54 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carla-Coiffure - Contact</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-<header>
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="service.html">Service</a>
-        <a href="enquiry.html">Enquiry</a>
-    </nav>
-</header>
-
-<main>
-    <h1>Contact Us</h1>
-    <p>For inquiries, appointments, or more information about our services at Carla-Coiffure, please reach out to us through the following contact details. We look forward to hearing from you and helping you achieve your perfect hairstyle!</p>
-    <p>joint us : 0682759784
-        <email>carlacoiffure@icloud.com</email>
-    </p>
-
-    <form>
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br><br>
-
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4"></textarea><br><br>
-
-        <input type="submit" value="Submit">
-    </form>
-    <div class="map container">
-        <h2>our locations</h2>
-        <p>Carla-Coiffure is conveniently located in Lubumbashi, DRC. Visit us at our salon to experience top-notch hair care services and products. We look forward to welcoming you!</p>
-        <iframe
-            src="https://maps.app.goo.gl/2B98HXY1wizm2a1QA"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <h2>Kinshasa</h2>
-            <iframe
-             src="https://maps.app.goo.gl/AhuYfX2pXAAz8hQm6"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"    
-
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-</main>
 <body class="contact">
+
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Service</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h1>Contact Us</h1>
+            <p>For inquiries, appointments, or more information about our services at Carla-Coiffure, please reach out using the details below.</p>
+            <p>Phone: 0682759784<br>
+               Email: <a href="mailto:carlacoiffure@icloud.com">carlacoiffure@icloud.com</a></p>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="enquiry-box">
+            <h2>Send a Message</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <!-- Location Maps -->
+        <section class="map container">
+            <h2>Our Locations</h2>
+            <p>Carla-Coiffure is conveniently located in Lubumbashi and Kinshasa, DRC.</p>
+
+            <!-- Lubumbashi Map -->
+            <iframe src="https://maps.app.goo.gl/2B98HXY1wizm2a1QA" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <!-- Kinshasa Map -->
+            <iframe src="https://maps.app.goo.gl/AhuYfX2pXAAz8hQm6" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Carla-Coiffure. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
