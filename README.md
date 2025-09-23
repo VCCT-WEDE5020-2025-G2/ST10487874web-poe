@@ -74,9 +74,20 @@ README.d : Project overview,changelog, and references.
 - 20/09/2025: Tested website on different browsers to ensure cross-browser compatibility.  
 - 23/09/2025: Added Part 2 code in `organisation/` folder and updated README with new folder structure and instructions.
 -23/09/2025: reference and comment my code(feedback part 1)
+  
+  ## Technologies Used
+- HTML
+- CSS
+- VS Code for development
+- Browsers tested: Chrome, Firefox, Edge
+
+  github link:
+
 
 ## References 
 .” Pinimg.com, 2025, i.pinimg.com/736x/2f/2a/9b/2f2a9b39eb731133dbf74fec0414fd81.jpg. Accessed 23 Sept. 2025.Pinimg.com, 2025, i.pinimg.com/736x/b6/22/49/b622492edb6bf1ec3cab2d48fdf14007.jpg. Accessed 23 Sept. 2025.Pinimg.com, 2025, i.pinimg.com/736x/25/ff/4f/25ff4fa8fc898b3ffe150ecb9f092acc.jpg. Accessed 23 Sept. 2025.Pinimg.com, 2025, i.pinimg.com/1200x/e7/48/8d/e7488d7a5daba8f7c6437ed6c049a518.jpg. Accessed 23 Sept. 2025.Pinimg.com, 2025, i.pinimg.com/1200x/24/0d/f9/240df947695149f1887d8134fe9744f7.jpg. Accessed 23 Sept. 2025.Pinimg.com, 2025, i.pinimg.com/736x/5b/95/ea/5b95eabb98b4274c686014bb492b8ecd.jpg. Accessed 23 Sept. 2025.Pinimg.com, 2025, i.pinimg.com/736x/16/ea/3c/16ea3c494a1f9858614e9a69912bc4ab.jpg. Accessed 23 Sept. 2025.Pinimg.com, 2025, i.pinimg.com/1200x/39/69/a4/3969a45ab32e45cbd853209e11edf440.jpg. Accessed 23 Sept. 2025.Pinimg.com, 2025, i.pinimg.com/1200x/12/1e/b5/121eb54e08c3b3d439ffa2e1db62ce88.jpg. Accessed 23 Sept. 2025.
 - CSS gradient effect adapted from: YASPER (Accessed: 23/09/2025)
 - Smith, J. (2024) How to create responsive CSS backgrounds. [Video] YouTube. Available at: https://www.youtube.com/watch?v=xxxxxxx [Accessed: 23/09/2025]
+
+  
 
