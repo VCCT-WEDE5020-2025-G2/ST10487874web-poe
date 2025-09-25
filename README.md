@@ -81,7 +81,7 @@ README.d : Project overview,changelog, and references.
 - VS Code for development
 - Browsers tested: Chrome, Firefox, Edge
 
-  github link:
+  github link:https://github.com/VCCT-WEDE5020-2025-G2/ST10487874web-poe.git
 
 
 ## References 
