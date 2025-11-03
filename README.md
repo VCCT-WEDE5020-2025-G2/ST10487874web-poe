@@ -89,5 +89,99 @@ README.d : Project overview,changelog, and references.
 - CSS gradient effect adapted from: YASPER (Accessed: 23/09/2025)
 - FrenchCoder. (2025) How to create responsive CSS backgrounds. [Video] YouTube. Available at: https://youtu.be/xjtyLXQug70 [Accessed: 19/09/2025]
 
+## PART3 
+## project overview
+Carla-Coiffure Website
+
+Carla-Coiffure is a professional hair salon website based in Lubumbashi, DRC. It showcases the salon’s services, gallery, appointment booking, and contact information. This website is designed to provide an elegant, responsive, and user-friendly interface with smooth animations and interactive features.
+## Features
+
+Responsive Design: Works on desktops, tablets, and mobile devices.
+Animated Sections: Fade-in animations for smooth user experience.
+Service Search: Users can search for specific services.
+Gallery: Visual showcase of hairstyles with hover effects and modal pop-ups.
+Appointment Modal: Quick and easy way for users to contact the salon.
+SEO Optimized: Meta tags, descriptions, and alt attributes for images.
+Social Media Integration: Footer includes social media icons for Facebook, Instagram, TikTok.
+Sitemap: XML sitemap (sitemap.xml) generated to help search engines index the site.
+robots.txt: Allows control over which pages search engines can crawl.
+Performance Optimizations: Lazy loading for images.
+Security Measures: HTTPS recommended, form input validation, and general best practices.
+
+## Structure 
+/Carla-Coiffure
+│
+├─ index.html            # Home page
+├─ service.html          # Services page
+├─ about.html            # About page
+├─ enquiry.html          # Enquiry form page
+├─ contact.html          # Contact page
+├─ css/
+│   └─ style.css         # Main stylesheet
+├─ js/
+│   └─ script.js         # JavaScript for modals, search, animations
+├─ images/               # All images used on site
+├─ sitemap.xml           # Sitemap for SEO
+└─ robots.txt            # Robots file to control search engine crawling
+
+## Technologies Used
+
+HTML5
+
+CSS (Flexbox, animations, responsive design)
+
+JavaScript (Modal functionality, fade-in animations, service search)
+
+Web Best Practices: SEO, performance optimization, accessibility
+
+## Usage
+
+Clone or download this repository.
+link: https://github.com/base1825/web-poe.git
+
+Open index.html in your browser to view the home page.
+## SEO & Performance Recommendations
+
+Backlinks: Encourage high-quality websites to link to Carla-Coiffure.
+
+Local SEO: Add Google Maps and local business schema markup.
+
+Social Media: Create Facebook, Instagram, TikTok profiles to promote content.
+
+Lazy Loading: All images use loading="lazy" to improve page speed.
+
+Page Speed: Optimize images and compress CSS/JS for faster loading.
+
+Security: Use HTTPS, strong passwords, input validation, and regular backups.
+
+Sitemap: Generate a sitemap (sitemap.xml) to help Google and other search engines index all pages.
+
+robots.txt: Create a robots.txt to control crawling.
+## Changelog
+- 03/11/2025: Updated website backgrounds and applied appropriate CSS styles to improve design and user experience.(feedback 2)
+ - 03/11/2025: Added Part 2 code in `organisation/` folder and updated README with new folder structure and instructions.
+  - 03/11/2025: Tested website on different browsers to ensure cross-browser compatibility.
+     
+  ## Screenshots.
+  
+  <img width="777" height="636" alt="Screenshot 2025-11-03 140719" src="https://github.com/user-attachments/assets/5b8d1397-5d6a-456a-b3d4-6a9d34c3f2c1" />
   
 
+  
+
+<img width="722" height="597" alt="Screenshot 2025-11-03 140730" src="https://github.com/user-attachments/assets/3ef8fbdd-909c-4fd7-9c8c-eff802edc944" /><img width="703" height="604" alt="Screenshot 2025-11-03 140741" src="https://github.com/user-attachments/assets/010b0b93-29b1-440f-80e6-c4c586daa5bf" />
+<img width="788" height="636" alt="Screenshot 2025-11-03 141024" src="https://github.com/user-attachments/assets/4228eea0-8373-4393-82d0-ed85f6e3a6f3" />
+<img width="797" height="650" alt="Screenshot 2025-11-03 141042" src="https://github.com/user-attachments/assets/e2211611-5864-4136-96ab-638035859c6c" />
+<img width="805" height="629" alt="Screenshot 2025-11-03 141106" src="https://github.com/user-attachments/assets/5c103aef-1f97-4c0d-b435-cc7ed564d379" />
+<img width="793" height="645" alt="Screenshot 2025-11-03 141117" src="https://github.com/user-attachments/assets/21fae884-1d7d-4117-94b1-b8dfe4d405a0" />
+
+<img width="774" height="616" alt="Screenshot 2025-11-03 141131" src="https://github.com/user-attachments/assets/8b4a62fd-b8db-40bd-aa1d-1640f458f746" />
+<img width="424" height="104" alt="Screenshot 2025-11-03 141140" src="https://github.com/user-attachments/assets/4b72f898-b723-4b8f-b185-835b60aaee28" /><img width="673" height="463" alt="Screenshot 2025-11-03 141146" src="https://github.com/user-attachments/assets/bd70141a-3035-4d3f-819d-fef0879afde1" />
+<img width="727" height="625" alt="Screenshot 2025-11-03 141218" src="https://github.com/user-attachments/assets/2103ab50-98ee-4305-b6a7-cc86e99b11a7" />
+
+<img width="736" height="631" alt="Screenshot 2025-11-03 141241" src="https://github.com/user-attachments/assets/d79e1fa1-a5e6-4bbb-829b-a96aa608590e" />
+
+## references list
+ Pinimg.com, 2025, i.pinimg.com/736x/39/1f/79/391f7914968dfaa0c9128a69ad85aee1.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/1200x/ad/c7/13/adc713ca674cf825a4f6ea5ac22ded7e.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2016, i.pinimg.com/1200x/d8/dc/27/d8dc271cd6d388a1bae367cf09adbe9e.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/fe/df/97/fedf97749ee312573241e48dfeb963eb.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2022, i.pinimg.com/1200x/8d/c7/c4/8dc7c4ad36a6e8abb48168b771c1d685.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/2e/a0/d1/2ea0d1bcb2702c62619f82359e8a4650.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/7b/ed/39/7bed398644d61cae7c4dd853b558a1c9.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/24/09/aa/2409aa132d8058133ca58507a6f38851.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/9e/48/a1/9e48a1b357883e7df75e258aed3e31da.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/79/88/ea/7988ead80e70d7d403eb5616e8efa5fe.jpg. Accessed 3 Nov. 2025.
+ css and javaScript:
+ 
