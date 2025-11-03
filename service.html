@@ -3,74 +3,459 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carla-Coiffure - Services</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Carla-Coiffure - Our Services</title>
+    <meta name="description" content="Discover Carla-Coiffure's professional hair styling, braiding, coloring, and treatment services in Lubumbashi. Book your appointment today!">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ===== Global Layout ===== */
+        body.service {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #2b4f60;
+            background-color: #f6f9fb;
+            margin: 0;
+        }
+
+        /* ===== Header ===== */
+        header {
+            background: #fff;
+            padding: 20px 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        header h1 {
+            font-size: 2.3rem;
+            color: #386b80;
+            margin-bottom: 10px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #386b80;
+            font-weight: bold;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover,
+        header nav a.active {
+            background-color: #ff6600;
+            color: #fff;
+            box-shadow: 0 3px 8px rgba(255, 102, 0, 0.4);
+        }
+
+        /* ===== Page Title ===== */
+        .intro {
+            text-align: center;
+            background: linear-gradient(120deg, #ffb56b, #ff6600);
+            color: white;
+            padding: 70px 20px 60px;
+            border-radius: 0 0 60px 60px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .intro h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* ===== Search Bar ===== */
+        .search-bar {
+            text-align: center;
+            margin: 40px auto;
+        }
+
+        .search-bar input {
+            width: 60%;
+            max-width: 400px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 2px solid #ff6600;
+            outline: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: #386b80;
+            box-shadow: 0 0 8px rgba(56,107,128,0.3);
+        }
+
+        /* ===== Services Flex Grid ===== */
+        .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .box {
+            background: #fff;
+            width: 250px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .box.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .box img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .box h3 {
+            color: #ff6600;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .box p {
+            font-size: 0.95rem;
+            color: #386b80;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255,102,0,0.3);
+        }
+
+        /* ===== Gallery ===== */
+        .gallery-section {
+            text-align: center;
+            margin: 80px auto 50px;
+        }
+
+        .gallery-section h2 {
+            color: #386b80;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 240px;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ===== Lightbox ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            animation: zoomIn 0.4s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-lightbox:hover {
+            color: #ff6600;
+        }
+
+        #caption {
+            margin-top: 15px;
+            color: #ddd;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        /* ===== Modal ===== */
+        .btn-modal {
+            display: block;
+            margin: 50px auto;
+            background-color: #ff6600;
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .btn-modal:hover {
+            background-color: #e65c00;
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 450px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .close {
+            float: right;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: #888;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            text-align: center;
+            background: #fff;
+            padding: 25px;
+            color: #386b80;
+            border-top: 1px solid #eee;
+        }
+
+        footer .social-icons img {
+            width: 28px;
+            height: 28px;
+            margin: 0 6px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        footer .social-icons img:hover {
+            opacity: 1;
+        }
+
+        /* ===== Animation ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .services { flex-direction: column; align-items: center; }
+            .box { width: 90%; }
+            .gallery img { width: 90%; height: auto; }
+        }
+    </style>
 </head>
 <body class="service">
 
-    <!-- Header and Navigation -->
     <header>
-        <h1>Our Services</h1>
+        <h1>Carla-Coiffure</h1>
         <nav>
             <a href="home.html">Home</a>
             <a href="about.html">About</a>
-            <a href="service.html">Service</a>
+            <a href="service.html" class="active">Services</a>
             <a href="enquiry.html">Enquiry</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Introduction -->
-        <section>
-            <h2>We Offer</h2>
-            <ul>
-                <li>Hair Styling</li>
-                <li>Natural African Hair Care</li>
-                <li>Hair Product Sales</li>
-            </ul>
-        </section>
+    <section class="intro">
+        <h2>Our Professional Hair Services</h2>
+        <p>Stylish and personalized care for men, women, and children in Lubumbashi, DRC.</p>
+    </section>
 
-        <!-- Service Cards Grid -->
-        <section class="service-grid">
-    <div class="card">
-        <img src="images/pure2.jpg" alt="Hair Styling">
-        <div class="card-content">
-            <h3>Pommade All Naturel Hair</h3>
-            <p>We offer a variety of hair styling services, including cuts, coloring, and special occasion styles...</p>
+    <!-- Search Bar -->
+    <section class="search-bar">
+        <input type="text" id="serviceSearch" placeholder="Search for a service..." onkeyup="filterServices()">
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="serviceContainer">
+        <div class="box" data-name="Haircut">
+            <img src="images/pure1.jpg" alt="Haircut">
+            <h3>Haircut</h3>
+            <p>Professional haircuts tailored for men, women, and children.</p>
         </div>
+        <div class="box" data-name="Braiding">
+            <img src="images/pure2.jpg" alt="Braiding">
+            <h3>Braiding</h3>
+            <p>Creative braiding styles that celebrate African beauty.</p>
+        </div>
+        <div class="box" data-name="Coloring">
+            <img src="images/pure 3.jpg" alt="Coloring">
+            <h3>Coloring</h3>
+            <p>Vibrant, long-lasting color that highlights your style.</p>
+        </div>
+        <div class="box" data-name="Hair Treatment">
+            <img src="images/hairst.jpg" alt="Hair Treatment">
+            <h3>Hair Treatment</h3>
+            <p>Deep conditioning and repair treatments for all hair types.</p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <h2>Our Work</h2>
+        <div class="gallery">
+            <img src="images/style1.jpg" alt="Braided hair style"  loading="lazy"> <!-- Add loading="lazy" for better performance--> 
+            <img src="images/style2.jpg" alt="Ponytail hair style"  loading="lazy">
+            <img src="images/style3.jpg" alt="Cornrows hair style"  loading="lazy">
+            <img src="images/style4.jpg" alt="Afro hair style"  loading="lazy">
+            <img src="images/color.jpg" alt="Hair dye style"  loading="lazy">
+            <img src="images/kit.jpg" alt="Kid hairstyle"  loading="lazy">
+            <img src="images/boy.jpg" alt="Boy haircut"  loading="lazy">
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+        <div id="caption"></div>
     </div>
 
-    <div class="card">
-        <img src="images/pure1.jpg" alt="Natural African Hair Care">
-        <div class="card-content">
-            <h3>Natural African Hair Care</h3>
-            <p>We specialize in caring for natural African hair, offering treatments and styles that enhance...</p>
+    <!-- Appointment Modal -->
+    <button id="openModalBtn" class="btn-modal">Book Appointment</button>
+
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book an Appointment</h2>
+            <p>Contact us by phone, email, or visit our salon to schedule your session.</p>
+            <p><strong>Phone:</strong> +243 999 888 777</p>
+            <p><strong>Email:</strong> contact@carlacoiffure.org</p>
         </div>
     </div>
-
-    <div class="card">
-        <img src="images/pure 3.jpg" alt="Hair Product Sales">
-        <div class="card-content">
-            <h3>Hair Product Sale</h3>
-            <p>We provide a curated selection of high-quality hair care products tailored to various hair types...</p>
-        </div>
-        <div class="card">
-            <img src="images/hairst.jpg" alt="hairstyling">
-            <div class="card-content">
-                <h3>Hairstyling</h3>
-                <p>Our experienced stylists are passionate about hair care and creativity. At Carla-Coiffure, every client is treated with attention and professionalism to ensure a unique and memorable experience.</p>
-        ">
-    </div>
-</section>
-
-    </main>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Carla-Coiffure. All rights reserved.</p>
+        <div class="social-icons">
+            <span>Follow us:</span>
+            <img src="images/facebook.jpg" alt="Facebook">
+            <img src="images/instagram.jpg" alt="Instagram">
+            <img src="images/tiktok.jpg" alt="TikTok">
+        </div>
     </footer>
 
+    <!-- JavaScript -->
+    <script>
+        // Search functionality
+        function filterServices() {
+            const input = document.getElementById("serviceSearch").value.toLowerCase();
+            const boxes = document.querySelectorAll(".box");
+            boxes.forEach(box => {
+                const name = box.dataset.name.toLowerCase();
+                box.style.display = name.includes(input) ? "block" : "none";
+            });
+        }
+
+        // Modal
+        const modal = document.getElementById("appointmentModal");
+        const openBtn = document.getElementById("openModalBtn");
+        const closeBtn = document.querySelector(".close");
+
+        openBtn.onclick = () => modal.style.display = "flex";
+        closeBtn.onclick = () => modal.style.display = "none";
+        window.onclick = e => { if (e.target == modal) modal.style.display = "none"; };
+
+        // Fade-in animation
+        const boxes = document.querySelectorAll('.box');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('appear');
+            });
+        }, { threshold: 0.1 });
+        boxes.forEach(box => observer.observe(box));
+
+        // Lightbox functionality
+        const galleryImages = document.querySelectorAll(".gallery img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const captionText = document.getElementById("caption");
+        const closeLightbox = document.querySelector(".close-lightbox");
+
+        galleryImages.forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.style.display = "flex";
+                lightboxImage.src = img.src;
+                captionText.textContent = img.alt;
+            });
+        });
+
+        closeLightbox.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>

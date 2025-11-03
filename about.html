@@ -10,55 +10,97 @@
 
     <!-- Header and Navigation -->
     <header>
+        <h1>Carla-Coiffure</h1>
         <nav>
             <a href="home.html">Home</a>
-            <a href="about.html">About</a>
+            <a href="about.html" class="active">About</a>
             <a href="service.html">Service</a>
             <a href="enquiry.html">Enquiry</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- About Introduction -->
-        <section>
-            <h1>Get to Know About Us</h1>
-            <p>Carla-Coiffure is a vibrant hair salon based in Lubumbashi, DRC, dedicated to providing exceptional hairstyling services for men, women, and children. Founded in 2020, the salon combines creativity and expertise to celebrate natural African hair, offering personalized care and the latest styling trends. At Carla-Coiffure, every client is treated with passion and professionalism to ensure a unique and memorable hair care experience.</p>
+        <!-- Intro -->
+        <section class="fade-in">
+            <h2>Get to Know About Us</h2>
+            <p>Carla-Coiffure is a vibrant hair salon in Lubumbashi, DRC, providing hairstyling for men, women, and children. Founded in 2020, we celebrate natural African hair while offering personalized care and the latest styling trends.</p>
         </section>
 
-       <section class="flex-boxes">
-    <div class="box">
-        <h3>Our Expertise</h3>
-        <p>We offer high-quality hairstyling services for men, women, and children, celebrating natural African hair.</p>
-    </div>
-    <div class="box">
-        <h3>Our Approach</h3>
-        <p>We combine creativity, skill, and passion to ensure every client leaves feeling confident and happy.</p>
-    </div>
-    <div class="box">
-        <h3>Client Experience</h3>
-        <p>Every visit is personalized and memorable, providing a comfortable, professional environment.</p>
-    </div>
-</section>
-    
-
-        <!-- Vision and Mission -->
-        <section>
-            <h2>Vision</h2>
-            <p>Our vision is to grow Carla-Coiffure into a leading brand that not only serves clients locally but also exports premium hair care products internationally.</p>
-
-            <h2>Mission</h2>
-            <p>Our mission is to provide an exceptional hair care experience for everyone, using high-quality products and professional techniques to help clients embrace their natural beauty.</p>
+        <!-- Expertise Boxes -->
+        <section class="flex-boxes fade-in">
+            <div class="box">
+                <h3>Our Expertise</h3>
+                <p>High-quality hairstyling for all hair types, celebrating natural African hair.</p>
+            </div>
+            <div class="box">
+                <h3>Our Approach</h3>
+                <p>Creativity, skill, and passion ensure every client leaves satisfied.</p>
+            </div>
+            <div class="box">
+                <h3>Client Experience</h3>
+                <p>Providing a professional, comfortable, and memorable salon environment.</p>
+            </div>
         </section>
 
-        <!-- Team Section -->
-        <section>
-            <h2>Our Team</h2>
-            <p>Stylists & Hair Experts, Customer Care Specialists, Product & Sales Team, and Support Staff collaborate to ensure an outstanding experience for all clients.</p>
+        <!-- Vision & Mission Accordion -->
+        <section class="accordion fade-in">
+            <h2>Learn More About Us</h2>
 
-            <h2>Why We Stand Out</h2>
-            <p>Our team is passionate about helping clients embrace their natural beauty in a supportive, creative environment.</p>
+            <button class="accordion-btn">Our Vision</button>
+            <div class="accordion-content">
+                <p>To grow Carla-Coiffure into a leading brand locally and internationally, offering premium hair care products.</p>
+            </div>
+
+            <button class="accordion-btn">Our Mission</button>
+            <div class="accordion-content">
+                <p>Deliver exceptional hair care experiences using high-quality products and professional techniques.</p>
+            </div>
+
+            <button class="accordion-btn">Our Values</button>
+            <div class="accordion-content">
+                <p>Professionalism, creativity, and respect for every client’s individuality.</p>
+            </div>
+        </section>
+
+        <!-- Team Section with Tabs -->
+        <section class="fade-in">
+            <h2>Meet Our Team</h2>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="1">Stylists</button>
+                <button class="tab-btn" data-tab="2">Support Staff</button>
+                <button class="tab-btn" data-tab="3">Sales Team</button>
+            </div>
+
+            <div class="tab-content active" id="tab-1">
+                <div class="team-member">
+                    <img src="images/11.jpg" alt="Stylist 1">
+                    <h3>Carla M.</h3>
+                    <p>Lead stylist specializing in natural hair and modern trends.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team1.jpg" alt="Stylist 2">
+                    <h3>Jean K.</h3>
+                    <p>Expert in braiding, coloring, and custom styles for all clients.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-2">
+                <div class="team-member">
+                    <img src="images/recep.jpg" alt="Support Staff 1">
+                    <h3>Marie L.</h3>
+                    <p>Reception and client care specialist ensuring smooth appointments.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-3">
+                <div class="team-member">
+                    <img src="images/sale.jpg" alt="Sales Team 1">
+                    <h3>Paul N.</h3>
+                    <p>Product expert and sales consultant for hair care solutions.</p>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -67,5 +109,46 @@
         <p>&copy; 2025 Carla-Coiffure. All rights reserved.</p>
     </footer>
 
+    <!-- Scripts -->
+    <script>
+        // Accordion
+        const accButtons = document.querySelectorAll('.accordion-btn');
+        accButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('active');
+                const content = btn.nextElementSibling;
+                if(content.style.maxHeight){
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+
+        // Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.tab-btn.active').classList.remove('active');
+                btn.classList.add('active');
+
+                document.querySelector('.tab-content.active').classList.remove('active');
+                document.getElementById(`tab-${btn.dataset.tab}`).classList.add('active');
+            });
+        });
+
+        // Fade-in on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('appear');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
 </body>
 </html>

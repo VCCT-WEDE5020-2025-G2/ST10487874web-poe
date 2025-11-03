@@ -1,0 +1,9 @@
+{"variant":"standard","title":"Robots.txt for Carla Coiffure","id":"35744"}
+# robots.txt for Carla Coiffure GitHub Pages site
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Disallow:
+
+# Location of the sitemap
+Sitemap: https://base1825.github.io/carla-coiffure/sitemap.xml

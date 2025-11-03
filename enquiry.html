@@ -14,7 +14,7 @@
             <a href="home.html">Home</a>
             <a href="about.html">About</a>
             <a href="service.html">Service</a>
-            <a href="enquiry.html">Enquiry</a>
+            <a href="enquiry.html" class="active">Enquiry</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
@@ -23,7 +23,7 @@
     <main>
         <section class="enquiry-box">
             <h1>Make an Enquiry</h1>
-            <form>
+            <form id="enquiryForm">
                 <!-- Name Field -->
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -42,11 +42,14 @@
 
                 <!-- Message Field -->
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
 
                 <!-- Submit Button -->
                 <input type="submit" value="Submit">
             </form>
+
+            <!-- Response Message -->
+            <p id="responseMessage" style="color: green; margin-top: 15px;"></p>
         </section>
     </main>
 
@@ -55,5 +58,32 @@
         <p>&copy; 2025 Carla-Coiffure. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript to handle form submission -->
+    <script>
+        const enquiryForm = document.getElementById('enquiryForm');
+        const responseMessage = document.getElementById('responseMessage');
+
+        enquiryForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            // Simple validation check
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const role = document.querySelector('input[name="role"]:checked');
+            
+            if(name === "" || email === "" || !role) {
+                responseMessage.style.color = "red";
+                responseMessage.textContent = "Please fill in all required fields.";
+                return;
+            }
+
+            // Display response
+            responseMessage.style.color = "green";
+            responseMessage.textContent = " Thank you, " + name + "! Our team will contact you soon.";
+
+            // Reset form
+            enquiryForm.reset();
+        });
+    </script>
 </body>
-</html>
+</html

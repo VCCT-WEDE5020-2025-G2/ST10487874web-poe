@@ -1,52 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carla-Coiffure - Home</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carla-Coiffure | Professional Hair Salon in Lubumbashi</title>
+<meta name="description" content="Carla-Coiffure offers expert hairstyling and natural African hair care for men, women, and children in Lubumbashi, DRC. Book your appointment today!">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ===== Global Styles ===== */
+body.home {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #2b4f60;
+    background-color: #f6f9fb;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    margin: 5px 0 10px;
+    color: #386b80;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #386b80;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+    background-color: #ff6600;
+    color: #fff;
+    box-shadow: 0 3px 8px rgba(255, 102, 0, 0.4);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    text-align: center;
+    background: linear-gradient(120deg, #ffb56b, #ff6600);
+    color: #fff;
+    border-radius: 0 0 60px 60px;
+    padding: 80px 20px 60px;
+    animation: fadeSlide 1s ease-in-out;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* ===== Content Sections ===== */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main section {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+main section.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    color: #386b80;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* ===== Buttons ===== */
+.btn-modal {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-modal:hover {
+    background: #e25c00;
+    transform: scale(1.05);
+}
+
+/* ===== Backlinks / Featured Section ===== */
+.backlinks {
+    text-align: center;
+}
+.backlinks-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.backlinks-logos img {
+    width: 100px;
+    height: 60px;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+.backlinks-logos img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* ===== Share Section ===== */
+.share-section {
+    text-align: center;
+}
+.share-links a {
+    color: #ff6600;
+    font-weight: 600;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.share-links a:hover {
+    color: #386b80;
+}
+
+/* ===== Modal ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+.close {
+    float: right;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #888;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #fff;
+    color: #386b80;
+    border-top: 1px solid #eee;
+}
+footer .social-icons {
+    margin-top: 10px;
+}
+footer .social-icons img {
+    width: 28px;
+    height: 28px;
+    margin: 0 6px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+footer .social-icons img:hover {
+    opacity: 1;
+}
+
+/* ===== Keyframes ===== */
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    header nav { flex-direction: column; }
+    .hero h2 { font-size: 1.6rem; }
+    .btn-modal { width: 100%; }
+}
+</style>
 </head>
+
 <body class="home">
 
-    <!-- Header and Navigation -->
-    <header>
-        <h1>Carla-Coiffure</h1>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="service.html">Service</a>
-            <a href="enquiry.html">Enquiry</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+<header>
+    <h1>Welcome to Carla-Coiffure</h1>
+    <nav>
+        <a href="home.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-    <!-- Main Content -->
-    <main>
-        <section>
-            <h2>Welcome to Carla-Coiffure</h2>
-            <p>Carla-Coiffure is a hair salon in Lubumbashi, DRC, offering stylish and professional hair care for men, women, and children. We celebrate natural African hair and provide personalized, high-quality service for every client.</p>
-        </section>
+<!-- Hero Section -->
+<section class="hero">
+    <h2>Professional Hair Services for Men, Women, and Children</h2>
+    <p>Carla-Coiffure is a premier hair salon in Lubumbashi, DRC, offering stylish and professional hair care. We celebrate natural African hair and provide personalized, high-quality service for every client.</p>
+</section>
 
-        <section>
-            <h2>Our Services</h2>
-            <ul>
-                <li>Hair styling for men, women, and children</li>
-                <li>Natural African hair care and treatments</li>
-                <li>Hair product sales and expert advice</li>
-                <li>Appointment booking and consultations</li>
-            </ul>
-        </section>
+<main>
+    <section>
+        <h2>Our Services</h2>
+        <ul>
+            <li>Hair styling for men, women, and children</li>
+            <li>Natural African hair care and treatments</li>
+            <li>Hair product sales and expert advice</li>
+            <li>Appointment booking and consultations</li>
+        </ul>
+        <p>Explore all our <a href="service.html">services</a> and <a href="enquiry.html">book an appointment</a> today.</p>
+    </section>
 
-        <section>
-            <h2>Why Choose Us?</h2>
-            <p>Our experienced stylists are passionate about hair care and creativity. At Carla-Coiffure, every client is treated with attention and professionalism to ensure a unique and memorable experience.</p>
-        </section>
-    </main>
+    <section>
+        <h2>Why Choose Carla-Coiffure?</h2>
+        <p>Our experienced stylists are passionate about hair care and creativity. At Carla-Coiffure, every client is treated with attention and professionalism to ensure a unique and memorable experience.</p>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Carla-Coiffure. All rights reserved.</p>
-    </footer>
+   
+
+    <section class="share-section">
+        <h3>Share Our Website</h3>
+        <div class="share-links">
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">WhatsApp</a>
+        </div>
+    </section>
+
+    <section>
+        <button id="openModal" class="btn-modal">Book Appointment</button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Book an Appointment</h2>
+                <p>Contact us by phone, email, or visit our salon to book your appointment.</p>
+                <p><strong>Phone:</strong> +243 999 888 777</p>
+                <p><strong>Email:</strong> contact@carlacoiffure.org</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Carla-Coiffure. All rights reserved.</p>
+    <div class="social-icons">
+        <span>Follow us:</span>
+        <img src="images/facebook.jpg" alt="Facebook">
+        <img src="images/instagram.jpg" alt="Instagram">
+        <img src="images/tiktok.jpg" alt="TikTok">
+    </div>
+</footer>
+
+<!-- JS -->
+<script>
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("openModal");
+const span = document.querySelector(".close");
+
+btn.onclick = () => modal.style.display = "flex";
+span.onclick = () => modal.style.display = "none";
+window.onclick = e => { if (e.target == modal) modal.style.display = "none"; }
+
+const sections = document.querySelectorAll("main section");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("appear");
+        }
+    });
+}, { threshold: 0.1 });
+sections.forEach(sec => observer.observe(sec));
+</script>
 
 </body>
 </html>

@@ -3,58 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carla-Coiffure - Contact</title>
+    <title>Contact Carla-Coiffure | Send Us a Message</title>
+    <meta name="description" content="Contact Carla-Coiffure in Lubumbashi and Kinshasa, DRC. Submit your message or find our locations on the map.">
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Your Site CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
+
 <body class="contact">
 
-    <!-- Header and Navigation -->
+    <!-- Header -->
     <header>
+        <h1>Contact Us</h1>
         <nav>
             <a href="home.html">Home</a>
             <a href="about.html">About</a>
             <a href="service.html">Service</a>
             <a href="enquiry.html">Enquiry</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="active">Contact</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
+        <!-- Contact Info -->
         <section>
-            <h1>Contact Us</h1>
-            <p>For inquiries, appointments, or more information about our services at Carla-Coiffure, please reach out using the details below.</p>
-            <p>Phone: 0682759784<br>
-               Email: <a href="mailto:carlacoiffure@icloud.com">carlacoiffure@icloud.com</a></p>
+            <p>For inquiries, appointments, or more information about our services at Carla-Coiffure, reach out using the details below.</p>
+            <p><strong>Phone:</strong> 0682759784<br>
+               <strong>Email:</strong> <a href="mailto:carlacoiffure@icloud.com">carlacoiffure@icloud.com</a></p>
         </section>
 
         <!-- Contact Form -->
         <section class="enquiry-box">
             <h2>Send a Message</h2>
-            <form>
+            <form id="contactForm">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required placeholder="Your full name">
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+
+                <label for="messageType">Message Type:</label>
+                <select id="messageType" name="messageType" required>
+                    <option value="">-- Choose a type --</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Appointment Request">Appointment Request</option>
+                </select>
 
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
 
-                <input type="submit" value="Submit">
+                <input type="submit" value="Send Message">
             </form>
+
+            <p id="responseMessage" style="margin-top: 15px; color: green;"></p>
         </section>
 
-        <!-- Location Maps -->
-        <section class="map container">
-            <h2>Our Locations</h2>
-            <p>Carla-Coiffure is conveniently located in Lubumbashi and Kinshasa, DRC.</p>
-
-            <!-- Lubumbashi Map -->
-            <iframe src="https://maps.app.goo.gl/2B98HXY1wizm2a1QA" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-
-            <!-- Kinshasa Map -->
-            <iframe src="https://maps.app.goo.gl/AhuYfX2pXAAz8hQm6" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <!-- Location Map -->
+        <section>
+            <h2>Find Us on the Map</h2>
+            <p>We are located in Lubumbashi and Kinshasa, DRC. Use the map below to find us!</p>
+            <div id="map" style="height:400px;"></div>
         </section>
     </main>
 
@@ -62,6 +78,50 @@
     <footer>
         <p>&copy; 2025 Carla-Coiffure. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const messageType = document.getElementById('messageType').value;
+            const message = document.getElementById('message').value.trim();
+
+            if(!name || !email || !messageType || !message) {
+                alert("Please complete all required fields.");
+                return;
+            }
+
+            const recipient = "carlacoiffure@icloud.com";
+            const subject = encodeURIComponent(`Carla-Coiffure Contact: ${messageType}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage Type: ${messageType}\n\nMessage:\n${message}`);
+
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+            document.getElementById('responseMessage').textContent = "✅ Your email client has been opened. Please review and send your message.";
+            contactForm.reset();
+        });
+
+        // Leaflet Map
+        if (document.getElementById("map")) {
+            const map = L.map("map").setView([-11.664, 27.479], 6);
+
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors',
+            }).addTo(map);
+
+            const lubumbashiMarker = L.marker([-11.664, 27.479]).addTo(map);
+            lubumbashiMarker.bindPopup("<b>Carla-Coiffure Lubumbashi</b><br>Main salon.");
+
+            const kinshasaMarker = L.marker([-4.322, 15.307]).addTo(map);
+            kinshasaMarker.bindPopup("<b>Carla-Coiffure Kinshasa</b><br>Capital branch.");
+        }
+    </script>
 
 </body>
 </html>
