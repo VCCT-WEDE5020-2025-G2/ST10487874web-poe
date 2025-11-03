@@ -183,5 +183,5 @@ robots.txt: Create a robots.txt to control crawling.
 
 ## references list
  Pinimg.com, 2025, i.pinimg.com/736x/39/1f/79/391f7914968dfaa0c9128a69ad85aee1.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/1200x/ad/c7/13/adc713ca674cf825a4f6ea5ac22ded7e.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2016, i.pinimg.com/1200x/d8/dc/27/d8dc271cd6d388a1bae367cf09adbe9e.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/fe/df/97/fedf97749ee312573241e48dfeb963eb.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2022, i.pinimg.com/1200x/8d/c7/c4/8dc7c4ad36a6e8abb48168b771c1d685.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/2e/a0/d1/2ea0d1bcb2702c62619f82359e8a4650.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/7b/ed/39/7bed398644d61cae7c4dd853b558a1c9.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/24/09/aa/2409aa132d8058133ca58507a6f38851.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/9e/48/a1/9e48a1b357883e7df75e258aed3e31da.jpg. Accessed 3 Nov. 2025.Pinimg.com, 2025, i.pinimg.com/736x/79/88/ea/7988ead80e70d7d403eb5616e8efa5fe.jpg. Accessed 3 Nov. 2025.
- css and javaScript:
+ css and javaScript: Youtu.be, 2025, youtu.be/EerdGm-ehJQ?si=-mu9Jvw-lhhyOzWP. Accessed 3 Nov. 2025.
  
